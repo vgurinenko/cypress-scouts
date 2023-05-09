@@ -2,6 +2,12 @@ name: E2E Tests
 
 on:
   push:
+<<<<<<< HEAD
+=======
+
+on:
+  workflow_dispatch:
+>>>>>>> parent of ffcc467 (Replaced push with workflow_dispatch trigger)
 
 jobs:
   run-cypress-tests:
