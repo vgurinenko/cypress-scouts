@@ -5,10 +5,13 @@ on:
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 on:
   workflow_dispatch:
 >>>>>>> parent of ffcc467 (Replaced push with workflow_dispatch trigger)
 
+=======
+>>>>>>> parent of 090fb65 (Added workflow_dispatch trigger)
 jobs:
   run-cypress-tests:
     runs-on: [ubuntu-latest]
