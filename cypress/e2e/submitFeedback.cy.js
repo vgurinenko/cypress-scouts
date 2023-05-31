@@ -7,6 +7,8 @@ describe('Demo Tests', () => {
   
       cy.get('#nava')
         .should('contain', 'PRODUCT STORE')
+
+      cy.get('#navbarExample > ul > li:nth-child(2) > a').click()
   
     })
   
