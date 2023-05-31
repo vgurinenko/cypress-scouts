@@ -1,6 +1,6 @@
-describe('Demo Tests', () => {
+describe('Demo Tests - Feedback', () => {
 
-    it('Opens the Home page', () => {
+    it('Submits a message to support', () => {
   
       cy.visit('https://www.demoblaze.com')
   
