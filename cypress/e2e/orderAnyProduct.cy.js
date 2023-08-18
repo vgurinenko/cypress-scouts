@@ -8,14 +8,9 @@ describe('Order any product', () => {
             .should('contain', 'PRODUCT STORE')
 
         // Click on the first product link...
-        // cy.get('#tbodyid > div:nth-child(1) > div > div > h4 > a').click()
         cy.get('.hrefch').first().click()
 
         // Check that we are on the product page - [Add to cart] button should exist
-        // cy.get('#tbodyid > div.row > div > a')
-        //    .should('exist')
-        //    .click()
-
         cy.get('a').contains('Add to cart').click()
 
         // Open the cart...
@@ -24,16 +19,9 @@ describe('Order any product', () => {
             .click()
 
         // Check that the cart is not empty (contains at least 1 "Delete")
-        // cy.contains('Delete')
-
-        // cy.get('#tbodyid > tr:nth-child(1) > td:nth-child(4) > a')
-        //     .should('exist')
-        //     .and('have.length', 1)
-
         cy.get('.success').should('exist')
 
         // Click the Place Order button
-        // cy.get('#page-wrapper > div > div.col-lg-1 > button').click()
         cy.get('button').contains('Place Order').click()
 
         // Fill out the order form
