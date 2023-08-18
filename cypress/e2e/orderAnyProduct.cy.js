@@ -11,7 +11,7 @@ describe('Order any product', () => {
         cy.get('.hrefch').first().click()
 
         // Check that we are on the product page - [Add to cart] button should exist
-        cy.get('a').contains('Add to cart').click()
+        cy.get('a:contains("Add to cart")').click()
 
         // Open the cart...
         cy.get('#cartur')
