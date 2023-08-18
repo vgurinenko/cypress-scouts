@@ -1,7 +1,7 @@
 describe('Order any product', () => {
 
     it('Adds the first item from the catalog to the cart and submits the order', () => {
-        cy.visit('https://www.demoblaze.com')
+        cy.visit('/')
 
         // Check that we are on the main page of the store
         cy.get('#nava')

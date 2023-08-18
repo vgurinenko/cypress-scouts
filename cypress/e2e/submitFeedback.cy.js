@@ -2,7 +2,7 @@ describe('Demo Tests - Feedback', () => {
 
     it('Submits a message to support', () => {
         
-        cy.visit('https://www.demoblaze.com')
+        cy.visit('/')
 
         cy.get('a:contains("Contact")').click()
 
