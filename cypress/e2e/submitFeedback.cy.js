@@ -3,8 +3,11 @@ describe('Demo Tests - Feedback', () => {
     it('Submits a message to support', () => {
         
         cy.visit('https://www.demoblaze.com')
-
-        cy.get('a:contains("Contact")').click()
+        
+        cy.get('#nava')
+            .should('contain', 'PRODUCT STORE')
+        
+        cy.get('#navbarExample > ul > li:nth-child(2) > a').click()
 
       // Fill out the form and click "Send message"
 
@@ -19,7 +22,7 @@ describe('Demo Tests - Feedback', () => {
         cy.get('#message-text')
             .invoke('val', 'Hi there! This is a test message...')
             
-        cy.get('button').contains('Send message').click()
+        cy.get('#exampleModal > div > div > div.modal-footer > button.btn.btn-primary').click()
   
     })
   
