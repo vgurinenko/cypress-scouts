@@ -2,11 +2,14 @@ import { login } from "../support/utils/login"
 
 describe('Auth Tests', () => {
 
+    beforeEach(() => {
+        cy.visit('/')
+    })
+
     const username = 'user992221'
     const password = 'pass'
 
-    it('Signs in via UI using valid credentials', () => {
-        cy.visit('/')
+    it('Successfully sign in using valid credentials', () => {
 
         login(username, password)
 
@@ -18,8 +21,37 @@ describe('Auth Tests', () => {
 
     })
 
-    it('Signs in via UI using valid username and invalid password', () => {
-        cy.visit('/')
+    it('Show "Please fill out Username and Password" error when using empty username and password', () => {
+
+        login('', '') // empty username and password
+
+        cy.on('window:alert', (text) => {
+            expect(text).to.contains('Please fill out Username and Password.')
+        })
+      
+    })
+
+    it('Show "Please fill out Username and Password" error when using empty username and non-empty password', () => {
+
+        login('', password) // empty username, valid password
+
+        cy.on('window:alert', (text) => {
+            expect(text).to.contains('Please fill out Username and Password.')
+        })
+      
+    })
+
+    it('Show "Please fill out Username and Password" error when using non-empty username and empty password', () => {
+
+        login(username, '') // valid username, empty password
+
+        cy.on('window:alert', (text) => {
+            expect(text).to.contains('Please fill out Username and Password.')
+        })
+      
+    })
+
+    it('Show "Wrong password" error when using valid username and invalid password', () => {
 
         login(username, '1234') // invalid password
 
@@ -30,8 +62,7 @@ describe('Auth Tests', () => {
       
     })
 
-    it('Signs in via UI using invalid username and valid password', () => {
-        cy.visit('/')
+    it('Show "User does not exist" error when using invalid username and valid password', () => {
 
         login('invalidUser'+Date.now(), password) // invalid user
 
@@ -41,8 +72,7 @@ describe('Auth Tests', () => {
           })
     })
 
-    it('Signs in via UI using invalid username and invalid password', () => {
-        cy.visit('/')
+    it('Show "User does not exist" error when using invalid username and invalid password', () => {
 
         login('user'+Date.now(), 'invalidPassword') // invalid user
 
@@ -52,8 +82,7 @@ describe('Auth Tests', () => {
           })
     })
 
-    it('Signs in via UI using invalid username and password (ALL CAPS)', () => {
-        cy.visit('/')
+    it('Show "User does not exist" error when using invalid username and password (ALL CAPS)', () => {
 
         login(username.toUpperCase(), password.toUpperCase()) // invalid user
 
