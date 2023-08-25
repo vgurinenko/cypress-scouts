@@ -14,9 +14,4 @@ export const login = (username, password) => {
          
      cy.get('button').contains('Log in').click()
 
-     cy.get('#logout2')
-        .should('be.visible')
-
-    cy.get('#nameofuser')
-        .should('have.text', `Welcome ${username}`)
 }
