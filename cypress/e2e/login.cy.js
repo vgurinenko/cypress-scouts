@@ -32,7 +32,7 @@ describe('Auth Tests', () => {
         //     .pause()
         //     .debug()
 
-        cy.get('button').contains('Close').click()
+        cy.get('#logInModal > div > div > div.modal-footer > button.btn.btn-secondary').click()
 
         cy.get('#logInModalLabel')
             .should('be.visible')
