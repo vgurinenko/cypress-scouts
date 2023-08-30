@@ -21,6 +21,19 @@ describe('Auth Tests', () => {
 
     })
 
+    it('Closes the sign in modal when the button "Close" is clicked', () => {
+
+        cy.get('a:contains("Log in")').click()
+        
+        cy.wait(1000)
+
+        cy.get('button').contains('Close').click()
+
+        cy.get('#logInModalLabel')
+            .should('not.be.visible')
+
+    })
+
     it('Show "Please fill out Username and Password" error when using empty username and password', () => {
 
         login('', '') // empty username and password
