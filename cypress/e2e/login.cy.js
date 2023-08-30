@@ -21,7 +21,7 @@ describe('Auth Tests', () => {
 
     })
 
-    it.only('Closes the sign in modal when the button "Close" is clicked', () => {
+    it('Closes the sign in modal when the button "Close" is clicked', () => {
 
         cy.get('a:contains("Log in")').click()
         
