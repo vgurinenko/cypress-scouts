@@ -5,7 +5,7 @@
 
 ## Project Description
 
-This is a demo project created for test-driving certain features of Cypress and trying out various testing practices on a demo site.
+This is a demo project created for test-driving certain features of Cypress and trying out various testing practices on a demo site. Can be used for learning E2E testing using Cypress.
 
 The demo website is [Demoblaze](https://www.demoblaze.com/). It's an online store where user can look up and purchase various electronics like phones, computers, tablets, etc.
 
@@ -18,9 +18,9 @@ The demo website is [Demoblaze](https://www.demoblaze.com/). It's an online stor
 
 ### Prerequisites
 
-1. Node.js
-2. Git
-3. Cypress
+1. [Node.js](https://nodejs.org/)
+2. [Git](https://git-scm.com/)
+3. [Cypress](https://www.cypress.io/)
 
 ### Steps
 
