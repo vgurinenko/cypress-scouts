@@ -21,21 +21,20 @@ describe('Auth Tests', () => {
 
     })
 
-    it('Closes the sign in modal when the button "Close" is clicked', () => {
+    it.only('Closes the sign in modal when the button "Close" is clicked', () => {
 
-        cy.get('a:contains("Log in")').click()
-        
-        cy.wait(1000)
+        cy.get('a:contains("Log in")').click().then( () => {
+            cy.wait(1000)
+            cy.get('#logInModalLabel')
+            .should('be.visible')
+        })
 
-        // cy.get('button').contains('Close').click()
-        // cy.get('button').contains('Close')
-        //     .pause()
-        //     .debug()
-
+        // Click the 'Close' button in the Login modal
         cy.get('#logInModal > div > div > div.modal-footer > button.btn.btn-secondary').click()
 
+        // Check whether the modal is no longer visible
         cy.get('#logInModalLabel')
-            .should('be.visible')
+            .should('not.be.visible')
 
     })
 
