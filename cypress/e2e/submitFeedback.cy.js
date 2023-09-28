@@ -1,4 +1,4 @@
-describe('Demo Tests - Feedback', () => {
+describe('Submit feedback', () => {
 
     it('Submits a message to support', () => {
         
