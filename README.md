@@ -24,12 +24,12 @@ https://docs.cypress.io/guides/getting-started/installing-cypress#System-require
 
 1. Clone the **cypress-scouts** repository.
 ```
-git clone git@github.com:AllIzm/cypress-scouts.git
+git@github.com:vgurinenko/cypress-scouts.git
 ```
 
 Install Cypress using the npm locally as a dev dependency from your project root
 ```
-npm install cypress
+npm install
 ```
 
 Open the Cypress for running and debugging tests in headed mode from your project root
