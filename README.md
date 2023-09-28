@@ -16,11 +16,9 @@ The demo website is [Demoblaze](https://www.demoblaze.com/). It's an online stor
 
 ## Deploying and running
 
-### Prerequisites
+### System requirements
 
-1. [Node.js](https://nodejs.org/)
-2. [Git](https://git-scm.com/)
-3. [Cypress](https://www.cypress.io/)
+https://docs.cypress.io/guides/getting-started/installing-cypress#System-requirements
 
 ### Steps
 
