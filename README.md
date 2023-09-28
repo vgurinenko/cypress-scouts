@@ -16,34 +16,32 @@ The demo website is [Demoblaze](https://www.demoblaze.com/). It's an online stor
 
 ## Deploying and running
 
-### Prerequisites
+### System requirements
 
-1. [Node.js](https://nodejs.org/)
-2. [Git](https://git-scm.com/)
-3. [Cypress](https://www.cypress.io/)
+https://docs.cypress.io/guides/getting-started/installing-cypress#System-requirements
 
 ### Steps
 
-1. Clone the **cypress-scouts** repository.
+1. Clone the **cypress-scouts** repository:
 ```
-git clone git@github.com:AllIzm/cypress-scouts.git
-```
-
-Install Cypress using the npm locally as a dev dependency from your project root
-```
-npm install cypress
+git@github.com:vgurinenko/cypress-scouts.git
 ```
 
-Open the Cypress for running and debugging tests in headed mode from your project root
+Change directory to your local cypress-scouts folder and then install Cypress there using npm:
+```
+npm install
+```
+
+Open the Cypress for running and debugging tests in headed mode from the cypress-scouts folder:
 ```
 npx cypress open
 ```
 
 - Choose E2E Testing (Note! Using Cypress for the first time add and set up configuration files)
 - Choose one of compatible browsers Cypress found on your system and click on "Start E2E testing in ..."
-- To run any test click on them.
+- To run any test click on it.
 
-Open the Cypress for running and debugging tests in headless mode from your project root
+Open the Cypress for running and debugging tests in headless mode from your cypress-scouts folder:
 ```
 npx cypress run
 ```
