@@ -30,7 +30,7 @@ describe('Auth Tests', () => {
         })
 
         // Click the 'Close' button in the Login modal
-        cy.get('button.btn.btn-secondary').click()
+        cy.get('#logInModal > div > div > div.modal-footer > button.btn.btn-secondary').click()
 
         // Check whether the modal is no longer visible
         cy.get('#logInModalLabel')
