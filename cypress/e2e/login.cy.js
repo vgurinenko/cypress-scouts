@@ -21,9 +21,9 @@ describe('Auth Tests', () => {
 
     })
 
-    it.only('Closes the sign in modal when the button "Close" is clicked', () => {
+    it('Closes the sign in modal when the button "Close" is clicked', () => {
 
-        cy.get('a:contains("Log in")').click().then( () => {
+        cy.get('a:contains("Log in")').click().then(() => {
             cy.wait(1000)
             cy.get('#logInModalLabel')
             .should('be.visible')
@@ -43,7 +43,7 @@ describe('Auth Tests', () => {
         login('', '') // empty username and password
 
         cy.on('window:alert', (text) => {
-            expect(text).to.contains('Please fill out Username and Password.')
+            expect(text).to.contain('Please fill out Username and Password.')
         })
       
     })
@@ -53,7 +53,7 @@ describe('Auth Tests', () => {
         login('', password) // empty username, valid password
 
         cy.on('window:alert', (text) => {
-            expect(text).to.contains('Please fill out Username and Password.')
+            expect(text).to.contain('Please fill out Username and Password.')
         })
       
     })
@@ -63,7 +63,7 @@ describe('Auth Tests', () => {
         login(username, '') // valid username, empty password
 
         cy.on('window:alert', (text) => {
-            expect(text).to.contains('Please fill out Username and Password.')
+            expect(text).to.contain('Please fill out Username and Password.')
         })
       
     })
@@ -79,19 +79,9 @@ describe('Auth Tests', () => {
       
     })
 
-    it('Show "User does not exist" error when using invalid username and valid password', () => {
+    it('Show "User does not exist" error when using a non-existing username and the correct password', () => {
 
-        login('invalidUser'+Date.now(), password) // invalid user
-
-        cy.window().then((win) => {
-            cy.stub(win, 'alert').as('winAlert')
-            cy.get('@winAlert').should('be.calledWith', 'User does not exist.')
-          })
-    })
-
-    it('Show "User does not exist" error when using invalid username and invalid password', () => {
-
-        login('user'+Date.now(), 'invalidPassword') // invalid user
+        login('invalidUser'+Date.now(), password) // Non-existing user user
 
         cy.window().then((win) => {
             cy.stub(win, 'alert').as('winAlert')
@@ -99,9 +89,19 @@ describe('Auth Tests', () => {
           })
     })
 
-    it('Show "User does not exist" error when using invalid username and password (ALL CAPS)', () => {
+    it('Show "User does not exist" error when using invalid username and a wrong password', () => {
 
-        login(username.toUpperCase(), password.toUpperCase()) // invalid user
+        login('user'+Date.now(), 'invalidPassword') // Non-existing user
+
+        cy.window().then((win) => {
+            cy.stub(win, 'alert').as('winAlert')
+            cy.get('@winAlert').should('be.calledWith', 'User does not exist.')
+          })
+    })
+
+    it('Show "User does not exist" error when using credentials in upper case', () => {
+
+        login(username.toUpperCase(), password.toUpperCase()) // Non-existing user
 
         cy.window().then((win) => {
             cy.stub(win, 'alert').as('winAlert')

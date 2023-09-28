@@ -4,9 +4,10 @@ describe('Submit feedback', () => {
         
         cy.visit('/')
 
+        // Click the Contact item on the navbar
         cy.get('a:contains("Contact")').click()
 
-      // Fill out the form and click "Send message"
+        // Fill out the form and click "Send message"
 
         cy.wait(1000)
       

@@ -19,7 +19,7 @@ describe('Order any product', () => {
             .click()
 
         // Check that the cart is not empty (contains at least 1 "Delete")
-        cy.get('.success').should('exist')
+        cy.get('.success').should('be.visible')
 
         // Click the Place Order button
         cy.get('button').contains('Place Order').click()
@@ -43,7 +43,7 @@ describe('Order any product', () => {
         cy.get('#year')
             .invoke('val', '2025')
 
-        // Click the Purchase buttonx
+        // Click the Purchase button
         cy.contains('Purchase').click()
     })
   
