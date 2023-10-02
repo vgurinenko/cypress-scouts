@@ -30,7 +30,32 @@ describe('Auth Tests', () => {
         })
 
         // Click the 'Close' button in the Login modal
-        cy.get('#logInModal > div > div > div.modal-footer > button.btn.btn-secondary').click()
+        // cy.get('#logInModal > div > div > div.modal-footer > button.btn.btn-secondary').click()
+
+        cy.get('button:visible')
+            .contains('Close')
+            .click()
+
+        // Check whether the modal is no longer visible
+        cy.get('#logInModalLabel')
+            .should('not.be.visible')
+
+    })
+
+    it('Closes the sign in modal when the button "X" is clicked', () => {
+
+        cy.get('a:contains("Log in")').click().then(() => {
+            cy.wait(1000)
+            cy.get('#logInModalLabel')
+            .should('be.visible')
+        })
+
+        // Click the 'Close' button in the Login modal
+        // cy.get('#logInModal > div > div > div.modal-footer > button.btn.btn-secondary').click()
+
+        cy.get('button:visible')
+            .contains('×')
+            .click()
 
         // Check whether the modal is no longer visible
         cy.get('#logInModalLabel')
