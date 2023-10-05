@@ -32,6 +32,8 @@ Change directory to your local cypress-scouts folder and then install Cypress th
 npm install
 ```
 
+Step by step instructions on installing Cypress can be found at https://docs.cypress.io/guides/getting-started/installing-cypress
+
 Open the Cypress for running and debugging tests in headed mode from the cypress-scouts folder:
 ```
 npx cypress open

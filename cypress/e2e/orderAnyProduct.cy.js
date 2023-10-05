@@ -45,6 +45,9 @@ describe('Order any product', () => {
 
         // Click the Purchase button
         cy.contains('Purchase').click()
+
+        cy.contains('Thank you for your purchase!')
+
     })
   
   })
