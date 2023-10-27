@@ -49,5 +49,23 @@ describe('Order any product', () => {
         cy.contains('Thank you for your purchase!')
 
     })
+
+    it('Checks whether the cart is empty', () => {
+        cy.visit('/')
+
+        // Check that we are on the main page of the store
+        cy.get('#nava')
+            .should('contain', 'PRODUCT STORE')
+
+        // Open the cart...
+        cy.get('#cartur')
+            .should('contain', 'Cart')
+            .click()
+
+        // Check that the cart is empty (Total doesn't have any value)
+        cy.get('#totalp')
+            .should('contain', '')
+
+    })
   
   })
